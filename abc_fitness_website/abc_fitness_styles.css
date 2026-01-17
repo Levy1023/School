@@ -1,0 +1,882 @@
+/* ===========================================
+   ABC FITNESS STUDIO - MAIN STYLESHEET
+   Student: Christopher Garcia
+   Course: Web Development
+   Task 2.2: Adding Style to Webpages Using CSS
+   =========================================== */
+
+/* ===========================================
+   COLOR PALETTE 2 - CSS VARIABLES
+   =========================================== */
+:root {
+    --primary-blue: #2C5F7C;        /* Calming ocean blue */
+    --secondary-teal: #47B5A6;      /* Energizing teal */
+    --accent-coral: #FF8563;        /* Active coral */
+    --light-cream: #F8F5F2;         /* Soft background */
+    --dark-navy: #1A3A52;           /* Deep navy for headers */
+    --text-primary: #2D2D2D;        /* Font Color 1 - high contrast */
+    --text-light: #FFFFFF;
+    --border-color: #D4D4D4;
+}
+
+/* ===========================================
+   RESET & BASE STYLES
+   =========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Typography Option 2 - body */
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--light-cream);
+}
+
+/* ===========================================
+   TYPOGRAPHY
+   =========================================== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Arial Black', 'Arial Bold', sans-serif; /* Typography Option 2 - headings */
+    font-weight: bold;
+    color: var(--dark-navy);
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-teal);
+}
+
+/* ===========================================
+   HEADER & NAVIGATION
+   =========================================== */
+header {
+    background-color: var(--primary-blue);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    margin-right: 1rem;
+}
+
+.site-title {
+    font-size: 1.8rem;
+    color: var(--text-light);
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--text-light);
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: var(--secondary-teal);
+    color: var(--text-light);
+}
+
+/* ===========================================
+   MAIN CONTENT CONTAINER
+   =========================================== */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+/* ===========================================
+   HOMEPAGE STYLES
+   =========================================== */
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-teal) 100%);
+    color: var(--text-light);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.hero-section h1 {
+    color: var(--text-light);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background-color: var(--accent-coral);
+    color: var(--text-light);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 133, 99, 0.4);
+}
+
+/* Feature Boxes */
+.features-container {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.feature-box {
+    flex: 1;
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 3px solid var(--secondary-teal);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(71, 181, 166, 0.3);
+}
+
+.feature-box h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.feature-box img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    background-color: var(--accent-coral);
+    padding: 3rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.testimonials-section h2 {
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.testimonial-item {
+    background-color: var(--text-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    color: var(--primary-blue);
+    margin-top: 0.5rem;
+    font-style: normal;
+}
+
+/* ===========================================
+   GALLERY PAGE STYLES
+   =========================================== */
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.view-cart-button {
+    background-color: var(--dark-navy);
+    color: var(--text-light);
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    transition: background-color 0.3s ease;
+}
+
+.view-cart-button:hover {
+    background-color: var(--secondary-teal);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.gallery-item {
+    background-color: #FFFFFF;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.gallery-item h3 {
+    color: var(--primary-blue);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.gallery-item p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.add-to-cart-button {
+    background-color: var(--secondary-teal);
+    color: var(--text-light);
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-to-cart-button:hover {
+    background-color: var(--accent-coral);
+    transform: scale(1.05);
+}
+
+/* Shopping Cart Modal */
+.cart-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
+
+.cart-modal.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-content {
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.cart-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+.cart-close:hover {
+    color: var(--accent-coral);
+}
+
+.cart-item {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1rem;
+}
+
+.cart-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.clear-cart-button,
+.process-order-button {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.clear-cart-button {
+    background-color: #777777;
+    color: var(--text-light);
+}
+
+.clear-cart-button:hover {
+    background-color: #555555;
+}
+
+.process-order-button {
+    background-color: var(--secondary-teal);
+    color: var(--text-light);
+}
+
+.process-order-button:hover {
+    background-color: var(--primary-blue);
+}
+
+/* ===========================================
+   ABOUT US PAGE STYLES
+   =========================================== */
+
+.about-section {
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    border-left: 5px solid var(--secondary-teal);
+}
+
+.about-section h2 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+/* Business Hours Table */
+.hours-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hours-table th,
+.hours-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hours-table th {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    font-weight: bold;
+}
+
+.hours-table tr:hover {
+    background-color: var(--light-cream);
+}
+
+/* Contact Form */
+.contact-section {
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.contact-section h2 {
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--dark-navy);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-teal);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.submit-button,
+.clear-form-button {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button {
+    background-color: var(--dark-navy);
+    color: var(--text-light);
+}
+
+.submit-button:hover {
+    background-color: var(--secondary-teal);
+    transform: translateY(-2px);
+}
+
+.clear-form-button {
+    background-color: #777777;
+    color: var(--text-light);
+}
+
+.clear-form-button:hover {
+    background-color: #555555;
+    transform: translateY(-2px);
+}
+
+/* ===========================================
+   CLASSES & BOOKING PAGE (CUSTOM PAGE)
+   =========================================== */
+
+.page-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-intro h1 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+/* Class Schedule Table */
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0 3rem 0;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.schedule-table thead {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+}
+
+.schedule-table th {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.schedule-table tbody tr:hover {
+    background-color: var(--light-cream);
+}
+
+.schedule-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.class-yoga {
+    border-left: 4px solid var(--secondary-teal);
+}
+
+.class-pilates {
+    border-left: 4px solid var(--accent-coral);
+}
+
+.class-zumba {
+    border-left: 4px solid var(--primary-blue);
+}
+
+/* Class Descriptions */
+.class-descriptions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.class-card {
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 10px;
+    border-top: 5px solid var(--secondary-teal);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.class-card:nth-child(2) {
+    border-top-color: var(--accent-coral);
+}
+
+.class-card:nth-child(3) {
+    border-top-color: var(--primary-blue);
+}
+
+.class-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.class-card h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+/* Booking Form */
+.booking-form {
+    background-color: #FFFFFF;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form h2 {
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* ===========================================
+   FOOTER
+   =========================================== */
+
+footer {
+    background-color: var(--dark-navy);
+    color: var(--text-light);
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.newsletter-section {
+    background-color: var(--accent-coral);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 3rem;
+}
+
+.newsletter-section h3 {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.subscribe-button {
+    background-color: var(--dark-navy);
+    color: var(--text-light);
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe-button:hover {
+    background-color: var(--primary-blue);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-coral);
+}
+
+.footer-nav {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.footer-nav a {
+    color: var(--text-light);
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: var(--secondary-teal);
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN - MEDIA QUERIES
+   =========================================== */
+
+/* Tablet Styles */
+@media screen and (max-width: 768px) {
+    .features-container {
+        flex-direction: column;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .class-descriptions {
+        grid-template-columns: 1fr;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+    }
+    
+    .schedule-table {
+        font-size: 0.85rem;
+    }
+    
+    .schedule-table th,
+    .schedule-table td {
+        padding: 0.5rem;
+    }
+}
+
+/* ===========================================
+   ACCESSIBILITY ENHANCEMENTS
+   =========================================== */
+
+/* Focus styles for keyboard navigation */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 3px solid var(--accent-coral);
+    outline-offset: 2px;
+}
+
+/* Skip to main content link for screen readers */
+.skip-to-main {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--accent-coral);
+    color: var(--text-light);
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-to-main:focus {
+    top: 0;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-blue: #1A4D6C;
+        --text-primary: #000000;
+        --border-color: #000000;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ===========================================
+   PRINT STYLES
+   =========================================== */
+
+@media print {
+    header,
+    footer,
+    .newsletter-section,
+    .cta-button,
+    .add-to-cart-button,
+    .view-cart-button {
+        display: none;
+    }
+    
+    body {
+        background-color: white;
+        color: black;
+    }
+    
+    a {
+        text-decoration: underline;
+    }
+}

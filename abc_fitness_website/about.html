@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Fitness Studio - About Us</title>
+    <link rel="stylesheet" href="abc_fitness_styles.css">
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    
+    <!-- Header and Navigation -->
+    <header>
+        <div class="logo-container">
+            <img src="images/opitions4.png" alt="ABC Fitness Studio Logo" class="logo">
+            <h1 class="site-title">ABC Fitness Studio</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="classes.html">Classes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <h1>About Us</h1>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <h2>Our Story</h2>
+            <p>We embarked on our journey as ABC Fitness Studio, a wellness sanctuary dedicated to promoting balance, harmony, and active living in our community. For over five years, our doors have been open to individuals seeking transformation through mindful movement and expert instruction.</p>
+            
+            <p>Our story is one of passion, dedication, and a deep commitment to holistic health. We believe that true fitness encompasses not just physical strength, but also mental clarity and emotional well-being. From calming yoga flows to energizing kickboxing sessions, our diverse class offerings create a symphony of movement that honors each person's unique fitness journey.</p>
+            
+            <p>We're more than just a fitness studio—we're a welcoming community where the energy of connection and personal growth fills the air. Our mission is to be the premier destination for individuals who want to embrace an active lifestyle while finding their inner balance. Join us in our vibrant downtown location and discover what it means to truly thrive.</p>
+        </section>
+
+        <!-- Business Hours -->
+        <section class="about-section">
+            <h2>Business Hours</h2>
+            <table class="hours-table">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Hours</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td>6:00 AM - 9:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>6:00 AM - 9:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>6:00 AM - 9:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td>6:00 AM - 9:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>6:00 AM - 9:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td>8:00 AM - 6:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Sunday</td>
+                        <td>8:00 AM - 6:00 PM</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="contact-section">
+            <h2>Contact Us</h2>
+            <p>Have questions or want to learn more about our classes? Fill out the form below and we'll get back to you as soon as possible!</p>
+            
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Your Phone Number (Optional)">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Feedback/Order Information:</label>
+                    <textarea id="message" name="message" placeholder="Your Feedback/Custom Order Information" required></textarea>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="customOrder" name="customOrder">
+                    <label for="customOrder">Custom Order</label>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="submit-button">Submit</button>
+                    <button type="button" class="clear-form-button" onclick="clearForm()">Clear Form</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <h3>Sign up for our Newsletter</h3>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Your email" required>
+            <button type="submit" class="subscribe-button">Subscribe</button>
+        </form>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+            <a href="#" aria-label="YouTube">📺</a>
+        </div>
+        <nav class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About Us</a>
+            <a href="classes.html">Classes</a>
+        </nav>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 ABC Fitness Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Form Handling with localStorage -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            const customOrder = document.getElementById('customOrder').checked;
+            
+            // Create customer data object
+            const customerData = {
+                name: name,
+                email: email,
+                phone: phone,
+                feedback: message,
+                customOrder: customOrder
+            };
+            
+            // Save to localStorage using customer name as key
+            localStorage.setItem(name, JSON.stringify(customerData));
+            
+            // Show success message
+            alert('Thank you for contacting us! We will respond within 24 hours. Your information has been saved.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        function clearForm() {
+            document.getElementById('contactForm').reset();
+        }
+
+        // Load saved data on page load (optional - to show previously submitted data)
+        window.addEventListener('DOMContentLoaded', function() {
+            console.log('About Us page loaded - localStorage ready');
+            // You can add code here to pre-fill form if needed
+        });
+    </script>
+</body>
+</html>

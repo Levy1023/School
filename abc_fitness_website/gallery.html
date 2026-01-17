@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Fitness Studio - Gallery</title>
+    <link rel="stylesheet" href="abc_fitness_styles.css">
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    
+    <!-- Header and Navigation -->
+    <header>
+        <div class="logo-container">
+            <img src="images/opitions4.png" alt="ABC Fitness Studio Logo" class="logo">
+            <h1 class="site-title">ABC Fitness Studio</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="classes.html">Classes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="gallery-header">
+            <h1>Choose from our delicious offerings...</h1>
+            <button class="view-cart-button" onclick="openCart()">View Cart</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid">
+            <!-- Individual Yoga -->
+            <div class="gallery-item">
+                <img src="images/Client2_IndividualYoga.png" alt="Individual Yoga Session">
+                <h3>Individual Yoga</h3>
+                <p>Experience personalized one-on-one yoga instruction tailored to your flexibility level and wellness goals.</p>
+                <button class="add-to-cart-button" onclick="addToCart('Individual Yoga', '$75')">Add to Cart</button>
+            </div>
+
+            <!-- Individual Pilates -->
+            <div class="gallery-item">
+                <img src="images/Client2_IndividualPilates.png" alt="Individual Pilates Session">
+                <h3>Individual Pilates</h3>
+                <p>Build core strength with customized Pilates sessions focused on your specific fitness needs and body mechanics.</p>
+                <button class="add-to-cart-button" onclick="addToCart('Individual Pilates', '$75')">Add to Cart</button>
+            </div>
+
+            <!-- Individual Kickboxing -->
+            <div class="gallery-item">
+                <img src="images/Client2_IndividualKickboxing.png" alt="Individual Kickboxing Session">
+                <h3>Individual Kickboxing</h3>
+                <p>High-intensity personal kickboxing training that combines cardio, strength, and martial arts techniques.</p>
+                <button class="add-to-cart-button" onclick="addToCart('Individual Kickboxing', '$80')">Add to Cart</button>
+            </div>
+
+            <!-- Group Yoga -->
+            <div class="gallery-item">
+                <img src="images/Client2_GroupYoga.png" alt="Group Yoga Class">
+                <h3>Group Yoga</h3>
+                <p>Join our community yoga classes where you'll find balance, flexibility, and inner peace alongside fellow practitioners.</p>
+                <button class="add-to-cart-button" onclick="addToCart('Group Yoga', '$25')">Add to Cart</button>
+            </div>
+
+            <!-- Group Pilates -->
+            <div class="gallery-item">
+                <img src="images/Client2_GroupPilates.png" alt="Group Pilates Class">
+                <h3>Group Pilates</h3>
+                <p>Energetic group Pilates sessions that strengthen your core while fostering a supportive fitness community.</p>
+                <button class="add-to-cart-button" onclick="addToCart('Group Pilates', '$25')">Add to Cart</button>
+            </div>
+
+            <!-- Group Kickboxing -->
+            <div class="gallery-item">
+                <img src="images/Client2_GroupKickboxing.png" alt="Group Kickboxing Class">
+                <h3>Group Kickboxing</h3>
+                <p>Release stress and burn calories in our high-energy group kickboxing classes with motivating music.</p>
+                <button class="add-to-cart-button" onclick="addToCart('Group Kickboxing', '$30')">Add to Cart</button>
+            </div>
+
+            <!-- Yoga Mat -->
+            <div class="gallery-item">
+                <img src="images/Client2_YogaMat.png" alt="Premium Yoga Mat">
+                <h3>Premium Yoga Mat</h3>
+                <p>High-quality, eco-friendly yoga mat with superior grip and cushioning for ultimate comfort during practice.</p>
+                <button class="add-to-cart-button" onclick="addToCart('Premium Yoga Mat', '$45')">Add to Cart</button>
+            </div>
+
+            <!-- Water Bottle -->
+            <div class="gallery-item">
+                <img src="images/Client2_WaterBottle.png" alt="ABC Fitness Water Bottle">
+                <h3>ABC Fitness Water Bottle</h3>
+                <p>Stay hydrated in style with our branded stainless steel water bottle that keeps drinks cold for 24 hours.</p>
+                <button class="add-to-cart-button" onclick="addToCart('ABC Fitness Water Bottle', '$20')">Add to Cart</button>
+            </div>
+
+            <!-- T-Shirt -->
+            <div class="gallery-item">
+                <img src="images/Client2_TeeShirt.png" alt="ABC Fitness T-Shirt">
+                <h3>ABC Fitness T-Shirt</h3>
+                <p>Comfortable, breathable performance t-shirt featuring our signature logo. Perfect for workouts or casual wear.</p>
+                <button class="add-to-cart-button" onclick="addToCart('ABC Fitness T-Shirt', '$30')">Add to Cart</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Shopping Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <span class="cart-close" onclick="closeCart()">&times;</span>
+            <h2>Your Shopping Cart</h2>
+            <div id="cartItems">
+                <p>Your cart is empty</p>
+            </div>
+            <div class="cart-buttons">
+                <button class="clear-cart-button" onclick="clearCart()">Clear Cart</button>
+                <button class="process-order-button" onclick="processOrder()">Process Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <h3>Sign up for our Newsletter</h3>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Your email" required>
+            <button type="submit" class="subscribe-button">Subscribe</button>
+        </form>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+            <a href="#" aria-label="YouTube">📺</a>
+        </div>
+        <nav class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About Us</a>
+            <a href="classes.html">Classes</a>
+        </nav>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 ABC Fitness Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Shopping Cart with sessionStorage -->
+    <script>
+        // Add item to cart using sessionStorage
+        function addToCart(itemName, price) {
+            // Get existing cart from sessionStorage or create empty array
+            let cart = JSON.parse(sessionStorage.getItem('cartItems')) || [];
+            
+            // Add new item to cart
+            cart.push({ name: itemName, price: price });
+            
+            // Save updated cart back to sessionStorage
+            sessionStorage.setItem('cartItems', JSON.stringify(cart));
+            
+            alert(itemName + ' has been added to your cart!');
+        }
+
+        // Open cart modal and display items from sessionStorage
+        function openCart() {
+            const modal = document.getElementById('cartModal');
+            const cartItemsDiv = document.getElementById('cartItems');
+            
+            // Retrieve cart items from sessionStorage
+            let cart = JSON.parse(sessionStorage.getItem('cartItems')) || [];
+            
+            if (cart.length === 0) {
+                cartItemsDiv.innerHTML = '<p>Your cart is empty</p>';
+            } else {
+                let cartHTML = '';
+                cart.forEach((item, index) => {
+                    cartHTML += `<div class="cart-item">
+                        <p><strong>${item.name}</strong> - ${item.price}</p>
+                    </div>`;
+                });
+                cartItemsDiv.innerHTML = cartHTML;
+            }
+            
+            modal.classList.add('active');
+        }
+
+        // Close cart modal
+        function closeCart() {
+            const modal = document.getElementById('cartModal');
+            modal.classList.remove('active');
+        }
+
+        // Clear cart by removing items from sessionStorage
+        function clearCart() {
+            // Remove all items from sessionStorage
+            sessionStorage.removeItem('cartItems');
+            
+            // Update display
+            document.getElementById('cartItems').innerHTML = '<p>Your cart is empty</p>';
+        }
+
+        // Process order and clear cart
+        function processOrder() {
+            // Retrieve cart from sessionStorage
+            let cart = JSON.parse(sessionStorage.getItem('cartItems')) || [];
+            
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+            } else {
+                alert('Thank you for your order! We will contact you shortly.');
+                
+                // Clear cart from sessionStorage
+                sessionStorage.removeItem('cartItems');
+                
+                // Update display and close modal
+                document.getElementById('cartItems').innerHTML = '<p>Your cart is empty</p>';
+                closeCart();
+            }
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('cartModal');
+            if (event.target == modal) {
+                closeCart();
+            }
+        }
+
+        // Load cart on page load to maintain state
+        window.addEventListener('DOMContentLoaded', function() {
+            // This ensures sessionStorage is ready when page loads
+            console.log('Gallery page loaded - sessionStorage ready');
+        });
+    </script>
+</body>
+</html>
